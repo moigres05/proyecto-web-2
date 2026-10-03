@@ -1,0 +1,41 @@
+
+:root{
+  --azul:#0d6efd; --oscuro:#17202a; --claro:#f8f9fa; --naranja:#f39c12;
+  --verde:#198754; --rojo:#dc3545; --morado:#6f42c1;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#212529;background:#fff}
+header{background:#111827;color:#fff;padding:1rem 0}
+header h1{font-size:clamp(1.35rem,3vw,2rem);margin:0}
+footer{background:#111827;color:#fff;text-align:center;padding:1.2rem;margin-top:2rem}
+.nav-retos{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}
+.hero-title{font-size:clamp(2rem,5vw,4rem);font-weight:800}
+.section-space{padding:4rem 0}
+.card-clean{height:100%;border:0;box-shadow:0 8px 24px rgba(0,0,0,.10)}
+.icono{font-size:3rem;line-height:1}
+.img-cover{width:100%;height:260px;object-fit:cover}
+.banner-full{
+ min-height:72vh;background-position:center;background-size:cover;background-repeat:no-repeat;
+ display:flex;align-items:center;color:#fff;position:relative;
+}
+.banner-full::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.52)}
+.banner-full .container{position:relative;z-index:1}
+.reto5 .col-md-4{padding:3rem 2rem;color:#fff}
+.bg-a{background:#dc3545}.bg-b{background:#65b32e}.bg-c{background:#f39c12}
+.hover-card{position:relative;overflow:hidden;border-radius:12px}
+.hover-card img{width:100%;height:230px;object-fit:cover;transition:transform .45s ease,filter .45s ease}
+.hover-card .overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+ background:rgba(0,0,0,.55);color:#fff;opacity:0;transition:.45s}
+.hover-card:hover img{transform:scale(1.10);filter:brightness(.75)}
+.hover-card:hover .overlay{opacity:1}
+.logo-box{height:170px;border:1px solid #dee2e6;border-radius:12px;display:flex;align-items:center;
+ justify-content:center;background:#fff;transition:.3s}
+.logo-box:hover{transform:translateY(-6px);box-shadow:0 10px 25px rgba(0,0,0,.12)}
+.logo-box span{font-size:1.1rem;font-weight:700;text-align:center;padding:1rem}
+.blog-thumb{width:100%;height:220px;object-fit:cover}
+@media(max-width:576px){
+ .section-space{padding:2.5rem 0}
+ .banner-full{min-height:65vh}
+ .img-cover,.hover-card img,.blog-thumb{height:210px}
+}
