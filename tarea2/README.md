@@ -4,6 +4,7 @@ Estructura:
 - index.html: índice de los 10 retos.
 - reto1.html ... reto10.html.
 - css/estilos.css: estilos compartidos.
+- imágenes: imágenes de los retos
 - pdf/guia-diseno-web.pdf: documento enlazado desde el Reto 10.
 
 Notas:
