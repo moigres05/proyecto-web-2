@@ -6,20 +6,12 @@ Estructura:
 - css/estilos.css: estilos compartidos.
 - pdf/guia-diseno-web.pdf: documento enlazado desde el Reto 10.
 
-Notas importantes:
+Notas:
 1. Bootstrap 5 se carga desde CDN en todas las páginas.
 2. Todas las páginas incluyen header, section y footer.
 3. Todas incluyen menú de ida/vuelta e índice.
-4. Revisar en Chrome DevTools usando Samsung Galaxy S8.
-5. Las fotografías actuales se cargan desde Unsplash mediante URL remota.
-6. Para la entrega final conviene descargar las imágenes, prepararlas y optimizarlas localmente.
-7. En el Reto 6 el banner solicita formato 1920 x 1080. Si se sustituye, preparar la imagen en esa resolución.
-8. Sustituir el favicon temporal por el favicon oficial de la Universidad si el docente exige exactamente el de la U.
-
-Pendientes antes de entregar:
-- Descargar/seleccionar las imágenes definitivas y guardarlas en img/.
-- Preparar banners 1920 x 1080.
-- Comprimir imágenes pesadas.
-- Colocar favicon oficial de la Universidad.
-- Probar todos los enlaces y páginas en Samsung Galaxy S8.
-
+4. es ressponsivo
+5. Las fotografías actuales se cargan desde imágenes y solo una desde unesplash directamente usando un href hacia la imagen con el fin de practicar ambas maneras
+6. las imágenes, la preparé y optimizé localmente.
+7. En el Reto 6 el banner solicita formato 1920 x 1080. ese se usó
+8. se usa favicon de la U
