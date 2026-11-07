@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- El viewport permite que la rejilla se adapte al ancho real del celular. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Vértice Karts: festival de karting, experiencias en pista y planes para compartir. Proyecto académico.">
+  <meta name="theme-color" content="#151515">
+  <title>Vértice Karts | Tu próxima gran vuelta</title>
+  <link rel="icon" type="image/svg+xml" href="imagenes/favicon.svg">
+  <!-- Bootstrap se carga desde CDN, tal como exige el curso. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Los estilos propios van después de Bootstrap para personalizarlo. -->
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/configuracion.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+
+<body id="inicio">
+  <!-- ENCABEZADO: identidad y banner a todo lo ancho. No hay nav ni menú. -->
+  <header class="portada">
+    <div class="marca-barra envoltura">
+      <span class="marca"><span class="marca-simbolo">V/</span> VÉRTICE <small>KARTS</small></span>
+      <span class="edicion">FESTIVAL DE KARTING · 2026</span>
+    </div>
+    <div class="portada-contenido envoltura">
+      <p class="etiqueta">24 OCTUBRE · 10:00 A. M. – 6:00 P. M.</p>
+      <h1>TU PRÓXIMA<br>GRAN <em>VUELTA.</em></h1>
+      <p class="portada-texto">Dejá la rutina en la salida.<br>Una pista, tus amigos y pura emoción.</p>
+      <!-- Un llamado a la acción aislado no constituye un menú de navegación. -->
+      <a class="btn boton-acento" href="#planes">Elegí tu experiencia <span>↗</span></a>
+      <p class="portada-nota">Desde ₡8.000 por persona · Casco y charla incluidos</p>
+    </div>
+    <div class="cinta"><span>VIVÍ LA PISTA</span><span>✦</span><span>SUPERÁ TU TIEMPO</span><span>✦</span><span>COMPARTÍ
+        LA EMOCIÓN</span>
+    </div>
+  </header>
+  <main>
+    <!-- SECCIÓN 1 DE 5: presentación y beneficios de la experiencia. -->
+    <section id="experiencia" class="bloque claro">
+      <div class="envoltura">
+        <div class="cabecera-seccion">
+          <p class="etiqueta">01 / LA EXPERIENCIA</p>
+          <p class="micro">La mejor vuelta empieza con vos.</p>
+        </div>
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <h2 id="titulo-experiencia">NO HACE FALTA<br>SER <span class="contorno">PILOTO.</span></h2>
+          </div>
+          <div class="col-lg-6">
+            <p class="entrada">Solo ganas de salir de lo de siempre.</p>
+            <p>Vení a disfrutar un día de karting con sesiones para principiantes y desafíos entre amigos. Conocé la
+              pista, encontrá tu ritmo y celebrá cada vuelta.</p>
+          </div>
+        </div>
+        <div class="beneficios">
+          <article><span class="numero">01</span>
+            <h3>Primero, la preparación</h3>
+            <p>Charla de conducción, ajuste del casco e indicaciones del equipo antes de ingresar.</p>
+          </article>
+          <article><span class="numero">02</span>
+            <h3>Tu ritmo, tu desafío</h3>
+            <p>Empezá con una tanda de reconocimiento y concentrate en mejorar tu trazada.</p>
+          </article>
+          <article><span class="numero">03</span>
+            <h3>Mejor en compañía</h3>
+            <p>Compartí la experiencia con amigos y compará sus tiempos al finalizar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- SECCIÓN 2 DE 5: contenido multimedia. Los medios nunca se reproducen solos. -->
+    <section id="pista" class="bloque oscuro">
+      <div class="envoltura">
+        <div class="cabecera-seccion">
+          <p class="etiqueta">02 / SENTÍ LA PISTA</p><span class="micro">Subí la emoción.</span>
+        </div>
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-7">
+            <!-- MP4 local: funciona aunque no haya conexión con YouTube. -->
+            <video class="video-local" controls playsinline preload="metadata" poster="imagenes/banner.webp">
+              <source src="video/promocional.mp4" type="video/mp4">
+              Tu navegador no reproduce este video. <a href="video/promocional.mp4">Descargar video</a>.
+            </video>
+            <p class="pie-medio">Una invitación a tu próxima gran vuelta.</p>
+          </div>
+          <div class="col-lg-5">
+            <h2 id="titulo-pista">LA RUTINA<br>SE QUEDA<br><span class="naranja">ATRÁS.</span></h2>
+            <p>Imaginá la salida, la primera curva y esa última vuelta que querés repetir.</p>
+            <div class="audio-caja">
+              <label for="audio-pista">Dale sonido a la experiencia</label>
+              <p class="micro">Ambiente electrónico original · 12 segundos</p><audio id="audio-pista" controls
+                preload="metadata">
+                <source src="audio/salida.mp3" type="audio/mpeg">Tu navegador no admite audio MP3.
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!-- details, con esta herramienta segun lo investigado podemos evitar ocupar una gran parte del celular con dos reproductores. -->
+        <details class="video-extra">
+          <summary>Ver karting en acción · video de referencia</summary>
+          <div class="ratio ratio-16x9">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-aCo8OvhGwY?si=fHEnQ3jy_-uXB5iW"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p class="pie-medio">Material de referencia de K1 Speed; no corresponde a este evento. <a
+              href="https://youtu.be/-aCo8OvhGwY?si=_c-VqQFQswGteKzx" target="_blank" rel="noopener noreferrer">Abrir en
+              YouTube</a>.</p>
+        </details>
+      </div>
+    </section>
+    <!-- SECCIÓN 3 DE 5: planes. Los botones abren un diálogo con detalles; no cobran. -->
+    <section id="planes" class="bloque claro">
+      <div class="envoltura">
+        <p class="etiqueta">03 / ELEGÍ TU SALIDA</p>
+        <div class="titulo-fila">
+          <h2 id="titulo-planes">UN PLAN.<br>MIL EMOCIONES.</h2>
+          <p>Elegí cómo querés vivir la pista.<br>Precios por persona en colones.</p>
+        </div>
+        <div class="planes">
+          <article class="plan">
+            <p class="etiqueta">PARA EMPEZAR</p>
+            <h3>Primera vuelta</h3>
+            <p class="precio">₡8.000</p>
+            <p>Tu primer encuentro con el karting.</p>
+            <ul>
+              <li>1 tanda de 10 minutos</li>
+              <li>Casco y charla de preparación</li>
+              <li>Registro de tu mejor tiempo</li>
+            </ul>
+            <button class="btn boton-borde elegir-plan" data-plan="Primera vuelta"
+              data-detalle="Una tanda de 10 minutos por ₡8.000 por persona. Incluye casco, charla y registro del mejor tiempo."
+              type="button">Ver experiencia <span>↗</span></button>
+          </article>
+          <article class="plan destacado">
+            <p class="etiqueta">MÁS TIEMPO EN PISTA</p>
+            <h3>Doble adrenalina</h3>
+            <p class="precio">₡14.000</p>
+            <p>Una vuelta para aprender. Otra para mejorar.</p>
+            <ul>
+              <li>2 tandas de 10 minutos</li>
+              <li>Casco y charla de preparación</li>
+              <li>Comparación de tus tiempos</li>
+            </ul>
+            <button class="btn boton-acento elegir-plan" data-plan="Doble adrenalina"
+              data-detalle="Dos tandas de 10 minutos por ₡14.000 por persona, con pausa entre sesiones. Incluye casco, charla y comparación de tiempos."
+              type="button">Ver experiencia <span>↗</span></button>
+          </article>
+          <article class="plan">
+            <p class="etiqueta">PARA COMPARTIR</p>
+            <h3>Reto entre amigos</h3>
+            <p class="precio">₡18.000</p>
+            <p>Organizá tu equipo y disfrutá el desafío.</p>
+            <ul>
+              <li>3 tandas de 10 minutos</li>
+              <li>Grupos desde 4 personas</li>
+              <li>Clasificación amistosa del grupo</li>
+            </ul>
+            <button class="btn boton-borde elegir-plan" data-plan="Reto entre amigos"
+              data-detalle="Tres tandas de 10 minutos por ₡18.000 por persona. Grupo mínimo de 4 personas (₡72.000 en total). Incluye casco, charla y clasificación amistosa."
+              type="button">Ver experiencia <span>↗</span></button>
+          </article>
+        </div>
+        <p class="nota">Actividad propuesta para mayores de 18 años. Presentate 20 minutos antes con calzado cerrado.
+          Evento y precios ficticios para fines académicos; no se realizan reservas ni pagos.</p>
+      </div>
+    </section>
+    <!-- SECCIÓN 4 DE 5: ubicación. El iframe queda fuera del contenedor limitado. -->
+    <section id="ubicacion" class="ubicacion">
+      <div class="envoltura bloque ubicacion-texto">
+        <div>
+          <p class="etiqueta">04 / NOS VEMOS EN LA SALIDA</p>
+          <h2 id="titulo-ubicacion">MARCÁ LA FECHA.</h2>
+          <p class="entrada">Sábado 24 de octubre de 2026</p>
+          <p>10:00 a. m. a 6:00 p. m. · Costa Rica</p>
+        </div>
+        <div>
+          <h3>La Guácima, Alajuela</h3>
+          <p>Zona de referencia para el festival conceptual.<br>El mapa no indica una sede confirmada.</p><a
+            class="btn boton-borde"
+            href="https://www.google.com/maps/search/?api=1&amp;query=La+Guacima+Alajuela+Costa+Rica" target="_blank"
+            rel="noopener noreferrer">Explorar la zona <span>↗</span></a>
+        </div>
+      </div>
+      <iframe class="mapa"
+        src="https://maps.google.com/maps?q=La%20Guacima%20Alajuela%20Costa%20Rica&amp;z=13&amp;output=embed&amp;hl=es"
+        title="Mapa de referencia de La Guácima, Alajuela, Costa Rica" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+
+      <!--NOTA IMPORTANTE: EL LOADING LAZY lo que hace es que el navegador pospone la descarga del 
+        recurso pesado hasta que el usuario hace scroll y se aproxima a la zona donde está ubicado en pantalla.
+        ESTO Ahorra datos móviles y hace que la página cargue mucho más rápido al inicio-->
+
+    </section>
+    <!-- SECCIÓN 5 DE 5: formulario de suscripción exclusivamente visual.
+         No contiene action, campos name, submit ni programación de envío. -->
+    <section id="suscripcion" class="bloque suscripcion">
+      <div class="envoltura row-suscripcion">
+        <div>
+          <p class="etiqueta">05 / QUE NO SE TE ESCAPE</p>
+          <h2 id="titulo-suscripcion">TU PRÓXIMA<br>HISTORIA<br>EMPIEZA ACÁ.</h2>
+          <p>Promociones, nuevas fechas y más vueltas por vivir.</p><a class="enlace-promo" href="promo.png"
+            download="promo.png">Descargar afiche del festival ↗</a>
+        </div>
+        <form class="formulario">
+          <h3>Recibí las novedades</h3>
+          <label for="nombre">Nombre</label>
+          <input class="form-control" id="nombre" type="text" placeholder="Tu nombre" autocomplete="given-name">
+          <label for="correo">Correo electrónico</label>
+          <input class="form-control" id="correo" type="email" placeholder="nombre@ejemplo.com" autocomplete="email">
+          <div class="consentimiento">
+            <input id="consentimiento" type="checkbox">
+            <label for="consentimiento">Me gustaría recibir novedades de Vértice Karts.</label>
+          </div>
+          <button class="btn boton-acento" type="button" disabled>Quiero recibir novedades</button>
+          <p id="aviso-formulario" class="micro">Formulario de muestra. No envía ni almacena información.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="pie">
+    <div class="envoltura"><span class="marca">VÉRTICE <small>KARTS</small></span>
+      <p>Tu próxima gran vuelta.</p>
+      <p class="micro">© 2026 · Universidad CENFOTEC.<br>Marca y evento
+        ficticios.</p>
+    </div>
+  </footer>
+  <!-- NOTA IMPORTANTE LAS ACCIONES FLOTANTES: contacto y volver arriba; no son un menú. -->
+  <div class="flotantes">
+
+    <button id="subir" class="subir" type="button" hidden>
+      ↑
+    </button>
+
+    <button id="abrir-chat" class="whatsapp" type="button">
+      <img src="imagenes/whatsapp.svg" alt="WhatsApp" class="icono-whatsapp">
+      <span>WhatsApp</span>
+    </button>
+
+  </div>
+
+  <dialog id="dialogo-plan" class="dialogo">
+    <button type="button" class="cerrar" data-cerrar>×</button>
+    <p class="etiqueta">TU EXPERIENCIA</p>
+    <h2 id="nombre-plan"></h2>
+    <p id="detalle-plan"></p>
+    <p class="nota">Evento académico ficticio. Esta consulta no confirma una reserva.</p>
+    <button class="btn boton-acento" id="consultar-plan" type="button">Consultar por WhatsApp</button>
+  </dialog>
+  <dialog id="dialogo-chat" class="dialogo">
+    <button type="button" class="cerrar" data-cerrar>×</button>
+    <p class="etiqueta">CONVERSEMOS</p>
+    <h2 id="titulo-chat">¿Una vuelta más?</h2>
+    <label for="mensaje-chat">Tu consulta</label>
+    <textarea id="mensaje-chat" rows="4">¡Hola! Me gustaría conocer más sobre el festival Vértice Karts.</textarea>
+    <p class="micro" id="aviso-chat"></p><a id="enlace-whatsapp" class="btn boton-acento" target="_blank"
+      rel="noopener noreferrer" href="https://wa.me/?text=Hola">Continuar en WhatsApp ↗</a>
+  </dialog>
+  <noscript>
+    <p class="aviso-noscript">Activá JavaScript para abrir los detalles de planes y el contacto. El contenido y los
+      medios siguen disponibles.</p>
+  </noscript>
+</body>
+
+</html>

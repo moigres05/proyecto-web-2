@@ -1,0 +1,10 @@
+Tarea #3 — Landing Page de Go Karts
+Sergio E. Méndez Mora — Proyecto Web 2
+
+REEMPLAZAR ESTA LÍNEA POR LA URL REAL DEL REPOSITORIO PERSONAL DE GITHUB.
+
+Carpeta de la tarea dentro del repositorio: tarea3/
+Página inicial: tarea3/index.html
+
+Antes de subir este TXT a Moodle, reemplazar la indicación anterior y comprobar
+que el repositorio contiene todos los archivos de tarea3.

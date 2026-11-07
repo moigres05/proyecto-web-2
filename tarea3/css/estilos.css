@@ -1,0 +1,880 @@
+/* VÉRTICE KARTS — Estilos propios, se mejora expericia usando ayuda de la IA por ejemplo en 
+aprendi que el uso de este bloque siguiente e incluido al final del documento es una buena practica en nuestros 
+sitios web
+en especial si tienen alguntipo de animacion
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important
+    }
+
+    ya que existen usuarios que sufren de trastornos vestibulares, mareos, epilepsia fotosensible, 
+    vértigo o fatiga visual provocados por transiciones y desplazamientos continuos o bruscos en la 
+    pantalla. Cuando una persona activa opciones del sistema como:
+    En Windows: Configuración → Accesibilidad → Efectos visuales → Desactivar efectos de animación.
+    En Mac/iPhone: Ajustes → Accesibilidad → Movimiento → Reducir movimiento.
+    El navegador web detecta automáticamente ese ajuste mediante: @media(prefers-reduced-motion:reduce) y aplica las reglas 
+    contenidas dentro del bloque. En este casso a todo. 
+    Cuando el usuario presiona la flecha para volver arriba, JavaScript consulta la misma preferencia (window.matchMedia). 
+    Si el usuario prefiere no ver animaciones, sube de manera instantánea (instant); 
+    si no tiene problema con el movimiento, sube con desplazamiento suave o smooth
+
+Orden de este documento: variables > base > encabezado > secciones > controles > responsive.
+Bootstrap aporta la rejilla; este archivo define la identidad visual. */
+
+
+:root {
+    --carbon: #151515;
+    --papel: #f5f4f0;
+    --naranja: #ff622b;
+    --gris: #b9b9b4;
+    --linea: #d4d3ce
+}
+
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px
+}
+
+body {
+    margin: 0;
+    background: var(--papel);
+    color: var(--carbon);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65
+}
+
+img,
+video {
+    max-width: 100%
+}
+
+a {
+    color: inherit
+}
+
+button,
+input,
+textarea {
+    font: inherit
+}
+
+button,
+a,
+input,
+textarea,
+summary {
+    -webkit-tap-highlight-color: transparent
+}
+
+.icono-whatsapp {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+:focus-visible {
+    outline: 3px solid #2274e5;
+    outline-offset: 5px
+}
+
+::selection {
+    background: var(--naranja);
+    color: var(--carbon)
+}
+
+
+.envoltura {
+    width: min(1180px, calc(100% - 64px));
+    margin-inline: auto
+}
+
+.bloque {
+    padding-block: 96px
+}
+
+.etiqueta {
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    margin-bottom: 24px
+}
+
+.micro,
+.nota,
+.pie-medio {
+    font-size: .875rem
+}
+
+.nota {
+    margin: 25px 0 0;
+    color: #565650
+}
+
+.entrada {
+    font-size: 1.5rem;
+    font-weight: 600
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 900;
+    line-height: 1.04
+}
+
+h1,
+h2 {
+    letter-spacing: -.055em
+}
+
+h2 {
+    font-size: clamp(2.4rem, 4.6vw, 4.6rem);
+    margin: 0 0 24px
+}
+
+h3 {
+    font-size: 1.25rem;
+    letter-spacing: -.02em
+}
+
+p {
+    margin-top: 0
+}
+
+.naranja {
+    color: var(--naranja)
+}
+
+
+/* El banner llena el ancho. La capa oscura mantiene legible el texto. */
+.portada {
+    color: white;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .81), rgba(0, 0, 0, .24)), url('../imagenes/banner.webp') center/cover no-repeat;
+    position: relative
+}
+
+.marca-barra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 25px;
+    border-bottom: 1px solid #ffffff40;
+    gap: 20px
+}
+
+.marca {
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: -.04em;
+    white-space: nowrap
+}
+
+.marca small {
+    font-size: .7rem;
+    letter-spacing: .16em
+}
+
+.marca-simbolo {
+    display: inline-block;
+    background: var(--naranja);
+    color: var(--carbon);
+    padding: 0 9px;
+    margin-right: 12px;
+    font-style: italic
+}
+
+.edicion {
+    font-size: .75rem;
+    letter-spacing: .15em;
+    font-weight: 700
+}
+
+.portada-contenido {
+    padding-top: 90px;
+    padding-bottom: 92px
+}
+
+.portada h1 {
+    font-size: clamp(3.9rem, 7.9vw, 7.4rem);
+    max-width: 900px;
+    margin-bottom: 25px
+}
+
+.portada em {
+    color: var(--naranja);
+    font-style: normal
+}
+
+.portada-texto {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 28px
+}
+
+.portada-nota {
+    margin-top: 20px;
+    font-size: .8rem;
+    color: #e1e1de
+}
+
+.cinta {
+    padding: 15px 24px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    background: var(--naranja);
+    color: var(--carbon);
+    font-size: .85rem;
+    font-weight: 900;
+    letter-spacing: .12em
+}
+
+.btn {
+    border-radius: 0;
+    min-height: 50px;
+    padding: 13px 23px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    white-space: normal
+}
+
+.boton-acento {
+    background: var(--naranja);
+    color: var(--carbon);
+    border: 1px solid var(--naranja)
+}
+
+.boton-acento:hover {
+    background: #ff814f;
+    color: var(--carbon);
+    border-color: #ff814f
+}
+
+.boton-borde {
+    border: 1px solid #777;
+    background: transparent;
+    color: var(--carbon)
+}
+
+.boton-borde:hover {
+    background: var(--carbon);
+    color: white
+}
+
+.btn:disabled {
+    opacity: 1;
+    background: #d2d0c9;
+    color: #55534b;
+    border-color: #d2d0c9
+}
+
+
+/* Sección clara, columnas y separadores inspirados en paginas de motores y carreras . */
+.cabecera-seccion,
+.titulo-fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: baseline
+}
+
+.contorno {
+    color: #62625d
+}
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 60px;
+    border-top: 1px solid var(--linea)
+}
+
+.beneficios article {
+    padding: 30px 28px 0 0
+}
+
+.beneficios article+article {
+    border-left: 1px solid var(--linea);
+    padding-left: 28px
+}
+
+.numero {
+    display: block;
+    color: #a83a14;
+    font-size: .9rem;
+    font-weight: 700;
+    margin-bottom: 24px
+}
+
+.beneficios h3 {
+    margin-bottom: 15px
+}
+
+.beneficios p {
+    color: #585852
+}
+
+.oscuro {
+    background: var(--carbon);
+    color: var(--papel)
+}
+
+.oscuro p:not(.etiqueta) {
+    color: #c4c4bf
+}
+
+.video-local {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    background: #080808
+}
+
+.pie-medio {
+    margin-top: 12px
+}
+
+.audio-caja {
+    border-top: 1px solid #555;
+    padding-top: 24px;
+    margin-top: 30px
+}
+
+.audio-caja label {
+    font-weight: 700
+}
+
+.audio-caja p {
+    margin: 6px 0 15px
+}
+
+audio {
+    width: 100%;
+    max-width: 400px
+}
+
+.video-extra {
+    border-top: 1px solid #444;
+    margin-top: 40px;
+    padding-top: 20px
+}
+
+.video-extra summary {
+    cursor: pointer;
+    padding: 10px 0;
+    font-weight: 700
+}
+
+.video-extra .ratio {
+    margin-top: 20px;
+    max-width: 850px
+}
+
+.planes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px
+}
+
+.plan {
+    padding: 30px;
+    border: 1px solid var(--linea);
+    display: flex;
+    flex-direction: column
+}
+
+.plan h3 {
+    font-size: 1.7rem
+}
+
+.plan .etiqueta {
+    font-size: .72rem
+}
+
+.precio {
+    font-weight: 900;
+    font-size: 2.6rem;
+    letter-spacing: -.05em;
+    margin: 23px 0 10px
+}
+
+.plan ul {
+    padding-left: 19px;
+    line-height: 2;
+    margin-bottom: 30px
+}
+
+.plan .btn {
+    margin-top: auto;
+    width: 100%;
+    gap: 14px
+}
+
+.destacado {
+    border-top: 5px solid var(--naranja);
+    background: white;
+    padding-top: 26px
+}
+
+.ubicacion {
+    background: #e7e6e0
+}
+
+.ubicacion-texto {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 60px
+}
+
+.mapa {
+    display: block;
+    border: 0;
+    width: 100%;
+    height: 380px
+}
+
+.row-suscripcion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center
+}
+
+.suscripcion {
+    background: var(--carbon);
+    color: var(--papel)
+}
+
+.formulario {
+    padding: 35px;
+    border: 1px solid #555
+}
+
+.formulario h3 {
+    font-size: 1.8rem;
+    margin-bottom: 25px
+}
+
+.formulario>label {
+    display: block;
+    margin: 17px 0 8px
+}
+
+.form-control {
+    border-radius: 0;
+    min-height: 52px;
+    background: #f8f7f4;
+    color: var(--carbon)
+}
+
+.consentimiento {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: .9rem;
+    margin: 22px 0
+}
+
+.consentimiento input {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 4px;
+    accent-color: var(--naranja)
+}
+
+.formulario .btn {
+    width: 100%
+}
+
+.formulario .micro {
+    margin: 15px 0 0;
+    color: #c2c2bc
+}
+
+.enlace-promo {
+    text-underline-offset: 6px;
+    font-size: .9rem
+}
+
+.pie {
+    background: #0b0b0b;
+    color: white;
+    padding: 42px 0 100px
+}
+
+.pie .envoltura {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px
+}
+
+.pie .micro {
+    color: #aaa;
+    max-width: 410px
+}
+
+
+/* Controles grandes para uso táctil;
+                                                                                                                                                                                                                                                                                                                                                el diálogo nativo atrapa el foco. */
+.flotantes {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px
+}
+
+.whatsapp,
+.subir {
+    border: 0;
+    min-height: 48px;
+    box-shadow: 0 4px 20px #0003;
+    cursor: pointer
+}
+
+.whatsapp {
+    border-radius: 30px;
+    background: #136d43;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 17px;
+    font-weight: 700;
+    font-size: .9rem
+}
+
+.whatsapp svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linejoin: round
+}
+
+.subir {
+    width: 48px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    background: var(--papel);
+    color: var(--carbon)
+}
+
+[hidden] {
+    display: none !important
+}
+
+.dialogo {
+    border: 0;
+    width: min(520px, calc(100% - 32px));
+    max-height: 85dvh;
+    padding: 40px;
+    color: var(--carbon);
+    background: var(--papel)
+}
+
+.dialogo::backdrop {
+    background: #000b
+}
+
+.dialogo h2 {
+    font-size: 2.5rem
+}
+
+.dialogo .etiqueta {
+    margin-top: 20px
+}
+
+.cerrar {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    background: transparent;
+    border: 0;
+    width: 44px;
+    height: 44px;
+    font-size: 2rem;
+    cursor: pointer
+}
+
+.dialogo textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 15px;
+    border: 1px solid #888;
+    resize: vertical
+}
+
+.dialogo .nota {
+    margin-bottom: 25px
+}
+
+.salto {
+    position: absolute;
+    left: 15px;
+    top: -100px;
+    z-index: 50;
+    background: white;
+    color: black;
+    padding: 10px
+}
+
+.salto:focus {
+    top: 15px
+}
+
+.aviso-noscript {
+    background: white;
+    padding: 20px
+}
+
+
+/* Tablet: se apilan las columnas antes de que el contenido quede estrecho. */
+@media(max-width:991px) {
+    .planes {
+        grid-template-columns: 1fr
+    }
+
+    .plan {
+        padding: 30px
+    }
+
+    .destacado {
+        padding-top: 26px
+    }
+
+    .plan .btn {
+        width: auto;
+        align-self: flex-start
+    }
+
+    .row-suscripcion {
+        gap: 40px
+    }
+
+    .ubicacion-texto {
+        gap: 40px
+    }
+
+    .portada-contenido {
+        padding-top: 75px;
+        padding-bottom: 75px
+    }
+
+    .beneficios article {
+        padding-right: 18px
+    }
+
+    .beneficios article+article {
+        padding-left: 18px
+    }
+
+    .pie .envoltura {
+        flex-wrap: wrap
+    }
+
+}
+
+
+/* Celulares: incluye Galaxy S8 (360 × 740). Sin anchos fijos que desborden. */
+@media(max-width:600px) {
+    .envoltura {
+        width: calc(100% - 40px)
+    }
+
+    .bloque {
+        padding-block: 62px
+    }
+
+    .marca-barra {
+        padding-block: 18px
+    }
+
+    .marca {
+        font-size: 1.1rem
+    }
+
+    .marca-simbolo {
+        margin-right: 6px
+    }
+
+    .edicion {
+        display: none
+    }
+
+    .portada {
+        background-position: 62% center;
+        background-image: linear-gradient(90deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, .4)), url('../imagenes/banner.webp')
+    }
+
+    .portada-contenido {
+        padding-top: 64px;
+        padding-bottom: 55px
+    }
+
+    .portada h1 {
+        font-size: clamp(3.15rem, 13.8vw, 5rem);
+        line-height: 1.04;
+        letter-spacing: -.055em
+    }
+
+    .portada .etiqueta {
+        font-size: .7rem;
+        letter-spacing: .08em
+    }
+
+    .portada-texto {
+        font-size: 1.1rem
+    }
+
+    .portada-nota {
+        max-width: 250px
+    }
+
+    .cinta {
+        font-size: .66rem;
+        letter-spacing: .05em;
+        gap: 12px;
+        flex-wrap: wrap
+    }
+
+    .cinta span:last-child,
+    .cinta span:nth-child(4) {
+        display: none
+    }
+
+    .cabecera-seccion,
+    .titulo-fila {
+        display: block
+    }
+
+    .cabecera-seccion .micro {
+        display: none
+    }
+
+    h2 {
+        font-size: 2.7rem
+    }
+
+    .beneficios {
+        grid-template-columns: 1fr;
+        margin-top: 30px
+    }
+
+    .beneficios article,
+    .beneficios article+article {
+        border-left: 0;
+        border-bottom: 1px solid var(--linea);
+        padding: 25px 0 12px
+    }
+
+    .numero {
+        margin-bottom: 15px
+    }
+
+    .planes {
+        gap: 20px
+    }
+
+    .plan {
+        padding: 25px
+    }
+
+    .plan .btn {
+        width: 100%
+    }
+
+    .ubicacion-texto,
+    .row-suscripcion {
+        grid-template-columns: 1fr;
+        gap: 30px
+    }
+
+    .mapa {
+        height: 320px
+    }
+
+    .formulario {
+        padding: 24px 20px
+    }
+
+    .pie .envoltura {
+        display: block
+    }
+
+    .pie .marca {
+        display: block;
+        margin-bottom: 15px
+    }
+
+    .flotantes {
+        right: 14px;
+        bottom: 14px
+    }
+
+    .whatsapp span {
+        display: none
+    }
+
+    .whatsapp {
+        width: 52px;
+        height: 52px;
+        justify-content: center;
+        padding: 10px
+    }
+
+    .dialogo {
+        padding: 30px 24px
+    }
+
+    .dialogo h2 {
+        font-size: 2.1rem
+    }
+
+    .entrada {
+        font-size: 1.3rem
+    }
+
+}
+
+
+/* Respetar preferencias de accesibilidad: sin desplazamiento animado. */
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important
+    }
+
+}
