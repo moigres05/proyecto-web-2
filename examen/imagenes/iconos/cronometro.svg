@@ -1,0 +1,5 @@
+<!-- Icono de cronometro. El color y el grosor de las líneas se ajustan aquí. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#963118" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="24" cy="27" r="14"></circle>
+              <path d="M24 13V7m-5 0h10m6 9 4-4M24 27v-7m0 7 5 3"></path>
+</svg>

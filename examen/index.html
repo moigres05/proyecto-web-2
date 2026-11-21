@@ -1,0 +1,245 @@
+<!doctype html>
+<!-- Estructura de la página principal. -->
+<html lang="es-CR">
+
+<head>
+  <!-- Configuración para tildes y pantallas de celular. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Conocé la experiencia de karting recreativo de Vértice Karts, sus planes y la guía para tu primera vuelta.">
+  <title>Vértice Karts | Tomá la curva</title>
+
+  <!-- Icono de la pestaña y archivos de estilos. -->
+  <link rel="icon" type="image/svg+xml" href="imagenes/favicon.svg">
+  <!-- Cargo antes la fuente de los títulos. -->
+  <link rel="preload" href="fuentes/barlow-condensed-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- El JavaScript se ejecuta cuando el HTML está listo. -->
+  <script src="js/examen.js" defer></script>
+</head>
+
+<body>
+  <!-- Acceso directo al contenido al navegar con Tab. -->
+  <a class="salto" href="#inicio">Saltar al contenido</a>
+
+  <!-- Encabezado con el logo y el menú. -->
+  <header class="cabecera">
+    <div class="contenedor barra">
+      <a class="marca" href="#inicio" aria-label="Vértice Karts, inicio">
+        <img src="imagenes/favicon.svg" width="34" height="34" alt="">
+        <span>VÉRTICE <b>KARTS</b></span>
+      </a>
+
+      <!-- Botón que abre y cierra el menú en celular. -->
+      <button class="hamburguesa" type="button" aria-controls="menu" aria-expanded="false" hidden>
+        <span class="solo-lectores">Menú principal</span>
+        <span class="hamburguesa-icono" aria-hidden="true"></span>
+      </button>
+
+      <!-- Cada enlace lleva al id de una sección. -->
+      <nav id="menu" class="menu" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#galeria">Galería</a>
+        <a href="#planes">Planes</a>
+
+        <!-- Submenú con dos enlaces externos. -->
+        <details class="recursos">
+          <summary>Explorá <span aria-hidden="true">⌄</span></summary>
+          <div class="subenlaces">
+            <!-- Estos enlaces se abren en otra pestaña. -->
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=La+Guacima+Alajuela+Costa+Rica" target="_blank"
+              rel="noopener noreferrer">Ver la zona en el mapa <span aria-hidden="true">↗︎</span></a>
+            <a href="https://es.wikipedia.org/wiki/Karting" target="_blank" rel="noopener noreferrer">Conocer el karting
+              <span aria-hidden="true">↗︎</span></a>
+          </div>
+        </details>
+        <a class="enlace-contacto" href="#contacto">Contáctenos <span aria-hidden="true">↗︎</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Inicio: imagen principal, título y botones. -->
+    <section class="hero" id="inicio" aria-labelledby="titulo-inicio">
+      <img class="hero-foto" src="imagenes/banner.webp" width="1920" height="1080" alt="" fetchpriority="high">
+      <div class="contenedor hero-interior">
+        <div class="hero-texto">
+          <p class="etiqueta">01 / KARTING RECREATIVO</p>
+          <!-- El título puede recibir la atencion de golpe o almenos asi se pensó, al llegar desde el menú. -->
+          <h1 id="titulo-inicio" tabindex="-1">Tomá la<br><em>curva.</em></h1>
+          <p class="hero-descripcion">Tu primera vuelta empieza en La Guácima. Agarrá el volante y descubrí cómo cambia
+            la pista cada vez que pasás por la meta.</p>
+          <div class="acciones">
+            <a class="boton boton-naranja" href="#planes">Ver los planes <span aria-hidden="true">↓</span></a>
+            <a class="boton boton-claro" href="#galeria">Mirar la galería</a>
+          </div>
+        </div>
+        <!-- Número decorativo del banner. -->
+        <p class="hero-sello" aria-hidden="true"><span>01</span> EN PISTA</p>
+      </div>
+    </section>
+
+    <!-- Experiencia: tres pasos con sus iconos. -->
+    <section class="seccion experiencia" id="experiencia" aria-labelledby="titulo-experiencia">
+      <div class="contenedor">
+        <p class="etiqueta">02 / LA EXPERIENCIA</p>
+        <div class="encabezado-seccion">
+          <h2 id="titulo-experiencia" tabindex="-1">De boxes a la meta.</h2>
+          <p>Así se vive una tanda de karting, desde que te ponés el casco hasta que revisás tu mejor tiempo.</p>
+        </div>
+
+        <!-- Lista con el orden de los pasos. -->
+        <ol class="pasos">
+          <li>
+            <span class="numero-paso" aria-hidden="true">01</span>
+            <!-- Imagen SVG del casco; el título de abajo explica su significado. -->
+            <img class="icono-paso" src="imagenes/iconos/casco.svg" width="52" height="52" alt="">
+            <h3>Prepará el equipo</h3>
+            <p>Ajustá el casco y escuchá la explicación sobre controles, señales y entrada a pista.</p>
+          </li>
+          <li>
+            <span class="numero-paso" aria-hidden="true">02</span>
+            <!-- Imagen SVG del volante. -->
+            <img class="icono-paso" src="imagenes/iconos/volante.svg" width="52" height="52" alt="">
+            <h3>Encontrá tu ritmo</h3>
+            <p>Conocé el circuito a tu ritmo y concentráte en hacer cada curva con fluidez.</p>
+          </li>
+          <li>
+            <span class="numero-paso" aria-hidden="true">03</span>
+            <!-- Imagen SVG del cronómetro. -->
+            <img class="icono-paso" src="imagenes/iconos/cronometro.svg" width="52" height="52" alt="">
+            <h3>Revisá tus vueltas</h3>
+            <p>Terminá la tanda, compará tus tiempos y elegí una curva que querás mejorar.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Galería con tres fotografías. -->
+    <section class="seccion galeria" id="galeria" aria-labelledby="titulo-galeria">
+      <div class="contenedor">
+        <p class="etiqueta">03 / GALERÍA</p>
+        <div class="encabezado-seccion">
+          <h2 id="titulo-galeria" tabindex="-1">Tres miradas<br>a la pista.</h2>
+          <p>Del volante al asfalto. Elegí una toma para acercarte al circuito.</p>
+        </div>
+
+        <figure class="visor" aria-label="Galería de karting">
+          <!-- Cada foto tiene una clave para relacionarla con su botón. -->
+          <div class="fotos">
+            <img class="foto activa" data-foto="curva" src="imagenes/curva.webp" width="768" height="512" loading="lazy"
+              alt="Dos pilotos toman una curva en karts naranja y negro.">
+            <img class="foto" data-foto="boxes" src="imagenes/boxes.webp" width="768" height="512" loading="lazy"
+              alt="Detalle del volante, el frente naranja del kart y las manos del piloto." aria-hidden="true">
+            <img class="foto" data-foto="meta" src="imagenes/meta.webp" width="768" height="512" loading="lazy"
+              alt="Un piloto se acerca a la línea de meta en un kart naranja." aria-hidden="true">
+          </div>
+          <!-- Descripción de la fotografía seleccionada. -->
+          <figcaption id="pie-foto" aria-live="polite">01 / En la curva</figcaption>
+        </figure>
+
+        <!-- Los controles aparecen cuando el JavaScript está listo. -->
+        <div class="controles-galeria" role="group" aria-label="Elegir fotografía" hidden>
+          <button class="control-foto" type="button" data-elegir="curva" data-pie="01 / En la curva"
+            aria-pressed="true"><span>01</span> Curva</button>
+          <button class="control-foto" type="button" data-elegir="boxes" data-pie="02 / En boxes"
+            aria-pressed="false"><span>02</span> Boxes</button>
+          <button class="control-foto" type="button" data-elegir="meta" data-pie="03 / Línea de meta"
+            aria-pressed="false"><span>03</span> Meta</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planes y enlace a la guía PDF. -->
+    <section class="seccion planes" id="planes" aria-labelledby="titulo-planes">
+      <div class="contenedor rejilla-planes">
+        <div>
+          <p class="etiqueta">04 / PLANES Y GUÍA PDF</p>
+          <h2 id="titulo-planes" tabindex="-1">Elegí tu tanda.</h2>
+          <p class="descripcion-planes">Desde una primera vuelta hasta un reto con tu grupo. En la guía podés comparar
+            lo que incluye cada plan.</p>
+          <!-- El botón abre la guía en otra pestaña. -->
+          <a class="boton boton-naranja" href="documentos/guia-vertice-karts.pdf" target="_blank"
+            rel="noopener noreferrer">
+            Abrir guía PDF <span aria-hidden="true">↗︎</span>
+          </a>
+        </div>
+
+        <!-- Nombre, duración y precio de cada plan. -->
+        <ul class="lista-planes" aria-label="Precios académicos por persona">
+          <li>
+            <div>
+              <h3>Primera vuelta</h3>
+              <p>1 tanda de 10 min</p>
+            </div>
+            <strong>₡8.000</strong>
+          </li>
+          <li>
+            <div>
+              <h3>Doble adrenalina</h3>
+              <p>2 tandas de 10 min</p>
+            </div>
+            <strong>₡14.000</strong>
+          </li>
+          <li>
+            <div>
+              <h3>Reto entre amigos</h3>
+              <p>3 tandas de 10 min · desde 4 personas</p>
+            </div>
+            <strong>₡18.000</strong>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contacto informativo y enlaces a redes. -->
+    <section class="seccion contacto" id="contacto" aria-labelledby="titulo-contacto">
+      <div class="contenedor rejilla-contacto">
+        <div>
+          <p class="etiqueta">05 / CONTÁCTENOS</p>
+          <h2 id="titulo-contacto" tabindex="-1">Nos vemos<br>en la pista.</h2>
+          <p class="contacto-intro">Escribinos por WhatsApp o mirá un video de karting para ver cómo se vive una tanda.
+          </p>
+        </div>
+        <div class="ficha-contacto">
+          <p class="etiqueta">UBICACIÓN DE REFERENCIA</p>
+          <h3>La Guácima, Alajuela</h3>
+          <p>Costa Rica · Concepto académico de karting recreativo.</p>
+
+          <!-- Accesos a WhatsApp y YouTube. -->
+          <div class="redes">
+            <a href="https://wa.me/50660469991" target="_blank" rel="noopener noreferrer">
+              <!-- El icono lleva alt vacío porque el enlace ya tiene el nombre escrito. -->
+              <img class="icono-red" src="imagenes/iconos/whatsapp.svg" width="20" height="20" alt="">
+              WhatsApp <span aria-hidden="true">↗︎</span>
+            </a>
+            <a href="https://youtu.be/-aCo8OvhGwY?si=_c-VqQFQswGteKzx" target="_blank" rel="noopener noreferrer">
+              <img class="icono-red" src="imagenes/iconos/youtube.svg" width="20" height="20" alt="">
+              YouTube <span aria-hidden="true">↗︎</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página, fuera de las cinco secciones. -->
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <a class="marca" href="#inicio" aria-label="Vértice Karts, inicio">
+        <img src="imagenes/favicon.svg" width="30" height="30" alt="">
+        <span>VÉRTICE <b>KARTS</b></span>
+      </a>
+      <p>Proyecto ucenfotec · Precios ilustrativos · Sin reservas ni pagos</p>
+    </div>
+  </footer>
+
+  <!-- Botón para volver al inicio. -->
+  <a class="volver-arriba" href="#inicio" aria-label="Volver al inicio" hidden>
+    <span aria-hidden="true">↑</span><span class="texto-arriba">Inicio</span>
+  </a>
+</body>
+
+</html>

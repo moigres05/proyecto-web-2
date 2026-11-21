@@ -1,0 +1,4 @@
+<!-- Icono de casco. El color y el grosor de las líneas se ajustan aquí. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#963118" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+<path d="M8 25a16 16 0 0 1 32 0v11H18A10 10 0 0 1 8 26z M40 23H25l4 7h11 M18 36v5h14"></path>
+</svg>

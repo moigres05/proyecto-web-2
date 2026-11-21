@@ -1,0 +1,887 @@
+/* Fuentes guardadas en la carpeta fuentes. ../ permite salir de la carpeta css. */
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fuentes/barlow-condensed-900.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+/* Fuente de los párrafos y botones. */
+@font-face {
+  font-family: "Manrope";
+  src: url("../fuentes/manrope-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+/* Colores, fuentes y medidas que se reutilizan en la página. */
+:root {
+  --carbon: #181816;
+  --oscuro: #232320;
+  --crema: #f5efe2;
+  --arena: #e9dfce;
+  --naranja: #ff6535;
+  --oxido: #963118;
+  --gris: #c8bfb1;
+  --linea-clara: #bdb09d;
+  --linea-oscura: #54514a;
+  --ancho: 74rem;
+  --borde-pantalla: clamp(1.25rem, 4vw, 3.5rem);
+  --alto-cabecera: 4.5rem;
+  --fuente-texto: "Manrope", system-ui, sans-serif;
+  --fuente-titulo: "Barlow Condensed", "Arial Narrow", "Liberation Sans Narrow", Impact, sans-serif;
+}
+
+/* Incluyo bordes y relleno en el ancho de cada elemento. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--carbon);
+  color: var(--crema);
+  font-family: var(--fuente-texto);
+  line-height: 1.6;
+}
+
+/* Quito los márgenes iniciales para controlar los espacios. */
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Señal visible al navegar con teclado y espacio para los saltos del menú. */
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+main>section[id] {
+  scroll-margin-top: var(--alto-cabecera);
+}
+
+main :is(h1, h2)[tabindex="-1"]:focus {
+  outline-offset: 6px;
+}
+
+/* Contenedor centrado con un ancho máximo. */
+.contenedor {
+  width: min(var(--ancho), calc(100% - var(--borde-pantalla) * 2));
+  margin-inline: auto;
+}
+
+.seccion {
+  padding-block: clamp(3.8rem, 7vw, 6.9rem);
+}
+
+/* Tamaños que se adaptan entre un mínimo y un máximo. */
+h1,
+h2 {
+  font-family: var(--fuente-titulo);
+  font-weight: 900;
+  line-height: .9;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(3.25rem, 7vw, 6.5rem);
+}
+
+h3 {
+  line-height: 1.25;
+}
+
+.etiqueta {
+  color: var(--naranja);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+/* Título y descripción en dos columnas cuando hay espacio. */
+.encabezado-seccion {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  align-items: end;
+  gap: 1rem 3rem;
+  margin-bottom: clamp(1.65rem, 4vw, 3rem);
+}
+
+.encabezado-seccion>p {
+  max-width: 32ch;
+}
+
+/* Texto que solo necesitan los lectores de pantalla. */
+.solo-lectores {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.salto {
+  position: fixed;
+  z-index: 5;
+  top: .5rem;
+  left: .5rem;
+  padding: .75rem 1rem;
+  color: var(--carbon);
+  background: var(--crema);
+  transform: translateY(-180%);
+}
+
+.salto:focus {
+  transform: translateY(0);
+}
+
+/* Encabezado que se mantiene arriba al bajar por la página. */
+.cabecera {
+  position: sticky;
+  z-index: 4;
+  top: 0;
+  background: var(--carbon);
+  box-shadow: 0 1px 0 var(--linea-oscura);
+}
+
+.barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  min-height: var(--alto-cabecera);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  white-space: nowrap;
+  font-size: .87rem;
+  font-weight: 800;
+  letter-spacing: .075em;
+  text-decoration: none;
+}
+
+.marca b {
+  color: var(--naranja);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(.6rem, 1.5vw, 1.3rem);
+  font-size: .81rem;
+  font-weight: 800;
+}
+
+/* Altura de los enlaces para poder tocarlos cómodamente. */
+.menu a,
+.menu summary {
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  text-decoration: none;
+}
+
+.menu a:hover,
+.menu summary:hover {
+  color: var(--naranja);
+}
+
+.enlace-contacto {
+  padding-inline: .75rem;
+  border: 1px solid var(--naranja);
+  color: var(--naranja);
+}
+
+/* Posición del submenú Explorá. */
+.recursos {
+  position: relative;
+}
+
+.recursos summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.recursos summary::-webkit-details-marker {
+  display: none;
+}
+
+.recursos[open] summary>span {
+  transform: rotate(180deg);
+}
+
+.subenlaces {
+  position: absolute;
+  inset-block-start: 100%;
+  inset-inline-end: 0;
+  width: max-content;
+  padding: .4rem .8rem;
+  border: 1px solid var(--linea-oscura);
+  background: var(--oscuro);
+  box-shadow: 0 .7rem 1.5rem #0006;
+}
+
+.subenlaces a {
+  justify-content: space-between;
+}
+
+.hamburguesa {
+  display: none;
+  place-items: center;
+  width: 2.85rem;
+  height: 2.85rem;
+  color: var(--naranja);
+  border: 1px solid currentColor;
+  background: var(--oscuro);
+  cursor: pointer;
+}
+
+/* Las tres líneas del botón hamburguesa. */
+.hamburguesa-icono {
+  position: relative;
+  width: 1.35rem;
+  height: 2px;
+  background: currentColor;
+}
+
+.hamburguesa-icono::before,
+.hamburguesa-icono::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  transition: transform .2s ease;
+}
+
+.hamburguesa-icono::before {
+  transform: translateY(-6px);
+}
+
+.hamburguesa-icono::after {
+  transform: translateY(6px);
+}
+
+/* Las líneas forman una X cuando el menú está abierto. */
+.hamburguesa[aria-expanded="true"] .hamburguesa-icono {
+  background: transparent;
+}
+
+.hamburguesa[aria-expanded="true"] .hamburguesa-icono::before {
+  transform: rotate(45deg);
+}
+
+.hamburguesa[aria-expanded="true"] .hamburguesa-icono::after {
+  transform: rotate(-45deg);
+}
+
+/* Banner con imagen, degradado y texto. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(34rem, 73vh, 46rem);
+  display: grid;
+  align-items: center;
+  background: var(--carbon);
+}
+
+.hero-foto,
+.hero::after {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* La imagen llena el espacio sin estirarse. */
+.hero-foto {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center 50%;
+}
+
+.hero::after {
+  content: "";
+  z-index: -1;
+  background: linear-gradient(90deg, #151411f7 1%, #181714d9 24%, #17161268 55%, #18171412 100%),
+    linear-gradient(0deg, #181816a0, transparent 34%);
+}
+
+.hero-interior {
+  position: relative;
+  padding-block: 4rem;
+}
+
+/* Ancho máximo del texto del banner. */
+.hero-texto {
+  max-width: 38rem;
+  animation: entrada .65s ease-out both;
+}
+
+.hero h1 {
+  font-size: clamp(5rem, 12vw, 11.5rem);
+  line-height: .8;
+}
+
+.hero h1 em {
+  color: var(--naranja);
+  font-style: normal;
+}
+
+.hero-descripcion {
+  max-width: 33ch;
+  margin: 1.65rem 0;
+  color: var(--crema);
+  font-size: 1rem;
+}
+
+.hero-sello {
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .35rem .65rem;
+  background: var(--carbon);
+  font-size: .67rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.hero-sello span {
+  color: var(--naranja);
+  font-size: 1.05rem;
+}
+
+/* Animación de entrada del texto. */
+@keyframes entrada {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Los botones pasan a otra fila si no caben. */
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.boton {
+  display: inline-flex;
+  min-height: 2.9rem;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  border: 1px solid transparent;
+  padding: .6rem .85rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: .82rem;
+  font-weight: 800;
+  transition: transform .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton-naranja {
+  background: var(--naranja);
+  color: var(--carbon);
+}
+
+.boton-naranja:hover {
+  background: #ff885f;
+}
+
+.boton-claro {
+  background: #181816a8;
+  color: var(--crema);
+  border-color: var(--gris);
+}
+
+.boton-claro:hover {
+  background: var(--crema);
+  color: var(--carbon);
+}
+
+/* Sección Experiencia con iconos cargados como imágenes SVG. */
+.experiencia {
+  background: var(--crema);
+  color: var(--carbon);
+}
+
+.experiencia .etiqueta,
+.planes .etiqueta,
+.contacto .etiqueta {
+  color: var(--oxido);
+}
+
+.pasos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--linea-clara);
+  border-bottom: 1px solid var(--linea-clara);
+}
+
+.pasos li {
+  position: relative;
+  padding: 1.55rem clamp(1rem, 2vw, 2rem);
+}
+
+.pasos li+li {
+  border-inline-start: 1px solid var(--linea-clara);
+}
+
+/* Número de cada paso en la esquina superior. */
+.numero-paso {
+  position: absolute;
+  top: 1.1rem;
+  right: 1rem;
+  color: var(--oxido);
+  font-size: .73rem;
+  font-weight: 800;
+}
+
+.icono-paso {
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: .6rem;
+  object-fit: contain;
+}
+
+.pasos p {
+  margin-top: .5rem;
+  color: #4c4137;
+  font-size: .9rem;
+}
+
+/* Galería: las fotos se superponen y cambian con un fundido. */
+.galeria {
+  background: var(--oscuro);
+}
+
+.galeria .encabezado-seccion>p {
+  color: var(--gris);
+}
+
+.visor {
+  position: relative;
+  border: 1px solid var(--linea-oscura);
+}
+
+.fotos {
+  position: relative;
+  aspect-ratio: 2.25;
+  background: var(--carbon);
+  overflow: hidden;
+}
+
+.foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+  opacity: 0;
+  transition: opacity .55s ease-in-out;
+}
+
+/* Solo la foto seleccionada se muestra. */
+.foto.activa {
+  opacity: 1;
+}
+
+.visor figcaption {
+  padding: .55rem .8rem;
+  background: var(--carbon);
+  color: var(--crema);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+/* Tres controles del mismo ancho para elegir la foto. */
+.controles-galeria {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .45rem;
+  margin-top: .55rem;
+}
+
+.control-foto {
+  min-height: 2.85rem;
+  padding: .45rem .3rem;
+  border: 1px solid var(--linea-oscura);
+  background: var(--carbon);
+  color: var(--crema);
+  font-size: .79rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+
+.control-foto span {
+  margin-right: .2rem;
+  font-size: .68rem;
+}
+
+.control-foto:hover {
+  border-color: var(--naranja);
+}
+
+/* Estilo del botón de la foto seleccionada. */
+.control-foto[aria-pressed="true"] {
+  color: var(--carbon);
+  background: var(--naranja);
+  border-color: var(--naranja);
+}
+
+/* Planes: guía a un lado y precios al otro. */
+.planes {
+  background: var(--crema);
+  color: var(--carbon);
+}
+
+.rejilla-planes,
+.rejilla-contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem clamp(1.5rem, 5vw, 5rem);
+}
+
+.descripcion-planes {
+  max-width: 38ch;
+  margin: 1.15rem 0 1.35rem;
+}
+
+.lista-planes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--linea-clara);
+}
+
+.lista-planes li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  padding-block: 1.05rem;
+  border-bottom: 1px solid var(--linea-clara);
+}
+
+.lista-planes p {
+  margin-top: .2rem;
+  color: #4c4137;
+  font-size: .84rem;
+}
+
+/* Evito que el precio se comprima. */
+.lista-planes strong {
+  flex-shrink: 0;
+  color: var(--oxido);
+  font-size: clamp(1.2rem, 2.6vw, 1.85rem);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Contacto, redes sociales y pie de página. */
+.contacto {
+  background: var(--arena);
+  color: var(--carbon);
+}
+
+.contacto-intro {
+  max-width: 32ch;
+  margin-top: 1.15rem;
+}
+
+.ficha-contacto {
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid var(--linea-clara);
+  border-top: .25rem solid var(--oxido);
+  background: var(--crema);
+}
+
+.ficha-contacto>p:not(.etiqueta) {
+  margin-top: .4rem;
+  color: #4c4137;
+  font-size: .9rem;
+}
+
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: 1.2rem;
+}
+
+.redes a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  gap: .35rem;
+  padding: .35rem .55rem;
+  border: 1px solid var(--linea-clara);
+  font-size: .77rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.redes a:hover {
+  color: var(--oxido);
+  border-color: var(--oxido);
+}
+
+.redes .icono-red {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.pie-interior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  padding-block: 1.2rem;
+}
+
+.pie-interior p {
+  color: var(--gris);
+  font-size: .76rem;
+}
+
+/* Botón para volver arriba, fijo en la pantalla. */
+.volver-arriba {
+  position: fixed;
+  z-index: 3;
+  right: max(.7rem, env(safe-area-inset-right));
+  bottom: max(.7rem, env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  min-width: 2.85rem;
+  min-height: 2.85rem;
+  padding: .25rem .55rem;
+  border: 1px solid var(--crema);
+  background: var(--carbon);
+  color: var(--crema);
+  text-decoration: none;
+  font-size: 1.15rem;
+  box-shadow: 0 .2rem .8rem #0005;
+}
+
+.volver-arriba:hover {
+  background: var(--naranja);
+  color: var(--carbon);
+}
+
+.texto-arriba {
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+/* Menú y distribución para pantallas pequeñas. */
+@media (max-width: 53rem) {
+  :root {
+    --alto-cabecera: 4rem;
+  }
+
+  /* Sin JavaScript, dejo los enlaces visibles. */
+  html:not(.js) .cabecera {
+    position: static;
+  }
+
+  html:not(.js) .barra {
+    flex-wrap: wrap;
+  }
+
+  .js .hamburguesa {
+    display: grid;
+  }
+
+  .menu {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    padding: .4rem var(--borde-pantalla) .85rem;
+    background: var(--carbon);
+  }
+
+  /* Panel del menú móvil con espacio para desplazarse. */
+  .js .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-height: calc(100dvh - var(--alto-cabecera));
+    overflow-y: auto;
+    border-top: 1px solid var(--linea-oscura);
+    box-shadow: 0 1rem 1.6rem #0007;
+  }
+
+  .js .menu.menu-abierto {
+    display: flex;
+  }
+
+  .menu>a,
+  .menu summary {
+    padding-inline: .6rem;
+    border-bottom: 1px solid var(--linea-oscura);
+  }
+
+  .menu .enlace-contacto {
+    margin-top: .5rem;
+    border: 1px solid var(--naranja);
+  }
+
+  .recursos summary {
+    justify-content: space-between;
+  }
+
+  .subenlaces {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    margin-top: .3rem;
+  }
+}
+
+@media (max-width: 42rem) {
+
+  /* En celular, la foto queda arriba del texto. */
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-foto {
+    height: 21rem;
+    object-position: right center;
+  }
+
+  .hero::after {
+    background: linear-gradient(180deg, #18181600 12%, #18181638 29%, var(--carbon) 59%);
+  }
+
+  .hero-interior {
+    padding-block: 15.5rem 2.65rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(4.6rem, 16vw, 6.5rem);
+  }
+
+  .hero-descripcion {
+    margin-block: 1.05rem 1.25rem;
+  }
+
+  .hero-sello {
+    display: none;
+  }
+
+  /* Una columna para leer el contenido en Galaxy S8. */
+  .encabezado-seccion,
+  .pasos,
+  .rejilla-planes,
+  .rejilla-contacto {
+    grid-template-columns: 1fr;
+  }
+
+  .pasos li {
+    padding-inline: .25rem 1.6rem;
+  }
+
+  .pasos li+li {
+    border-inline-start: 0;
+    border-top: 1px solid var(--linea-clara);
+  }
+
+  .fotos {
+    aspect-ratio: 1.4;
+  }
+
+  .pie-interior {
+    padding-bottom: 3.25rem;
+  }
+
+  .texto-arriba {
+    display: none;
+  }
+}
+
+/* Reduzco los efectos si el usuario lo solicita en su dispositivo. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-texto {
+    animation: none;
+  }
+
+  .foto,
+  .boton,
+  .control-foto,
+  .hamburguesa-icono::before,
+  .hamburguesa-icono::after {
+    transition: none;
+  }
+
+  .boton:hover {
+    transform: none;
+  }
+}

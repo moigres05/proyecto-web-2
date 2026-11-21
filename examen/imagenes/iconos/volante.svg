@@ -1,0 +1,6 @@
+<!-- Icono de volante. El color y el grosor de las líneas se ajustan aquí. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#963118" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+<circle cx="24" cy="24" r="17"></circle>
+              <circle cx="24" cy="24" r="4"></circle>
+              <path d="m8 20 12 3m8 0 12-3M24 28v13"></path>
+</svg>
